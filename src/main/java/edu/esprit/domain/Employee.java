@@ -13,8 +13,10 @@ import javax.persistence.*;
  */
 @Entity
 
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="role")
+@DiscriminatorValue(value="emp")
 public class Employee implements Serializable {
-
 	   
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -22,10 +24,9 @@ public class Employee implements Serializable {
 	private String login;
 	private String password;
 	private String role;
+	
 	@ManyToOne
 	private Etablishment etablishment ; 
-	private static final long serialVersionUID = 1L;
-
 	@OneToMany(mappedBy="employee")
 	private List<CinRequest> cinRequestList; 
 	@OneToMany(mappedBy="employee")
@@ -37,8 +38,10 @@ public class Employee implements Serializable {
 	@OneToMany(mappedBy="employee")
 	private List<Claim> ClaimList ; 
 	@OneToMany(mappedBy="employee")
-	private List<RoadTaxService> RoadTaxServiceList  ; 
+	private List<RoadTaxService> RoadTaxServiceList; 
 
+	private static final long serialVersionUID = 1L;
+	
 	public Employee() {
 		super();
 	}   
