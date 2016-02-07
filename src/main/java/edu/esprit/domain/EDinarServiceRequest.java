@@ -27,7 +27,7 @@ public class EDinarServiceRequest implements Serializable {
 	@ManyToOne
 	private EDinarCard eDinarCard ; 
 	@ManyToOne
-	private Client client; 
+	private Citizen citizen; 
 	@ManyToOne
 	private TransportLine transportLine; 
 	@ManyToOne
@@ -45,11 +45,12 @@ public class EDinarServiceRequest implements Serializable {
 	public void seteDinarCard(EDinarCard eDinarCard) {
 		this.eDinarCard = eDinarCard;
 	}
-	public Client getClient() {
-		return client;
+	
+	public Citizen getCitizen() {
+		return citizen;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+	public void setCitizen(Citizen citizen) {
+		this.citizen = citizen;
 	}
 	public TransportLine getTransportLine() {
 		return transportLine;

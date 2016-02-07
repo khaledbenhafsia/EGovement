@@ -25,7 +25,7 @@ public class EDinarCard implements Serializable {
 	private Date expirationDate;
 	private Date creationDate;
 	@ManyToOne
-	private Client client ; 
+	private Citizen citizen ; 
 	@OneToMany(mappedBy="eDinarCard")
 	private List<EDinarServiceRequest> eDinarServiceRequestList  ; 
 	private static final long serialVersionUID = 1L;
@@ -68,11 +68,18 @@ public class EDinarCard implements Serializable {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	public Client getClient() {
-		return client;
+	public Citizen getCitizen() {
+		return citizen;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+	public void setCitizen(Citizen citizen) {
+		this.citizen = citizen;
 	}
+	public List<EDinarServiceRequest> geteDinarServiceRequestList() {
+		return eDinarServiceRequestList;
+	}
+	public void seteDinarServiceRequestList(List<EDinarServiceRequest> eDinarServiceRequestList) {
+		this.eDinarServiceRequestList = eDinarServiceRequestList;
+	}
+
    
 }

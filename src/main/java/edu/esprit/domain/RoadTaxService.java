@@ -25,18 +25,20 @@ public class RoadTaxService implements Serializable {
 	private String cin;
 	private String drivingLicense ; 
 	@ManyToOne
-	private Client client ; 
+	private Citizen citizen ; 
 	@ManyToOne
 	private Service service  ;
 	@ManyToOne
 	private Agent agent; 
 	
-	public Client getClient() {
-		return client;
+	
+	public Citizen getCitizen() {
+		return citizen;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+	public void setCitizen(Citizen citizen) {
+		this.citizen = citizen;
 	}
+	
 	public Service getService() {
 		return service;
 	}

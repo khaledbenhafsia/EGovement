@@ -28,18 +28,18 @@ public class BirthRegistration implements Serializable {
 	private Date responseDate;
 	private String response;
 	@ManyToOne
-	private Client client ; 
+	private Citizen citizen ; 
 	@ManyToOne
 	private Service service  ;
 	@ManyToOne
 	private Agent agent; 
 	
 	private static final long serialVersionUID = 1L;
-	public Client getClient() {
-		return client;
+	public Citizen getCitizen() {
+		return citizen;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+	public void setCitizen(Citizen citizen) {
+		this.citizen = citizen;
 	}
 	public Service getService() {
 		return service;

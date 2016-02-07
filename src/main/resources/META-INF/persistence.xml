@@ -19,6 +19,8 @@
 		<class>edu.esprit.domain.University</class>
 		<class>edu.esprit.domain.Agent</class>
 		<class>edu.esprit.domain.Admin</class>
+		<class>edu.esprit.domain.Company</class>
+		<class>edu.esprit.domain.Citizen</class>
 		<properties>
 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 		    <property name="hibernate.show_sql" value="true"/>
