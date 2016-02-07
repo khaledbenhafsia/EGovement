@@ -1,37 +1,36 @@
-package edu.esprit.persistance;
+package edu.esprit.domain;
 
 import java.io.Serializable;
 import java.lang.Integer;
-import java.lang.String;
 import java.util.Date;
+
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: CinRequest
+ * Entity implementation class for Entity: RoadTaxService
  *
  */
 @Entity
 
-public class CinRequest implements Serializable {
+public class RoadTaxService implements Serializable {
 
 	   
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer idCinRequest;
-	private String birthExcerpt;
-	private String residenceCertificate;
-	private String photoId;
+	private Integer idRoadTaxService;
 	private String requestState;
 	private Date requestDate;
 	private Date responseDate;
 	private String response;
+	private String cin;
+	private String drivingLicense ; 
 	@ManyToOne
 	private Client client ; 
 	@ManyToOne
 	private Service service  ;
 	@ManyToOne
 	private Employee employee; 
-	private static final long serialVersionUID = 1L;
+	
 	public Client getClient() {
 		return client;
 	}
@@ -50,67 +49,57 @@ public class CinRequest implements Serializable {
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
-
-	
-
-	public CinRequest() {
-		super();
-	}   
-	public Integer getIdCinRequest() {
-		return this.idCinRequest;
-	}
-
-	public void setIdCinRequest(Integer idCinRequest) {
-		this.idCinRequest = idCinRequest;
-	}   
-	public String getBirthExcerpt() {
-		return this.birthExcerpt;
-	}
-
-	public void setBirthExcerpt(String birthExcerpt) {
-		this.birthExcerpt = birthExcerpt;
-	}   
-	public String getResidenceCertificate() {
-		return this.residenceCertificate;
-	}
-
-	public void setResidenceCertificate(String residenceCertificate) {
-		this.residenceCertificate = residenceCertificate;
-	}   
-	public String getPhotoId() {
-		return this.photoId;
-	}
-
-	public void setPhotoId(String photoId) {
-		this.photoId = photoId;
-	}   
 	public String getRequestState() {
-		return this.requestState;
+		return requestState;
 	}
-
 	public void setRequestState(String requestState) {
 		this.requestState = requestState;
-	}   
-	public Date getRequestDate() {
-		return this.requestDate;
 	}
-
+	public Date getRequestDate() {
+		return requestDate;
+	}
 	public void setRequestDate(Date requestDate) {
 		this.requestDate = requestDate;
-	}   
-	public Date getResponseDate() {
-		return this.responseDate;
 	}
-
+	public Date getResponseDate() {
+		return responseDate;
+	}
 	public void setResponseDate(Date responseDate) {
 		this.responseDate = responseDate;
-	}   
-	public String getResponse() {
-		return this.response;
 	}
-
+	public String getResponse() {
+		return response;
+	}
 	public void setResponse(String response) {
 		this.response = response;
+	}
+	public String getCin() {
+		return cin;
+	}
+	public void setCin(String cin) {
+		this.cin = cin;
+	}
+	public String getDrivingLicense() {
+		return drivingLicense;
+	}
+	public void setDrivingLicense(String drivingLicense) {
+		this.drivingLicense = drivingLicense;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	private static final long serialVersionUID = 1L;
+
+	public RoadTaxService() {
+		super();
+	}   
+	public Integer getIdRoadTaxService() {
+		return this.idRoadTaxService;
+	}
+
+	public void setIdRoadTaxService(Integer idRoadTaxService) {
+		this.idRoadTaxService = idRoadTaxService;
 	}
    
 }

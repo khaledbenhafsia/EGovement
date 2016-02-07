@@ -1,4 +1,4 @@
-package edu.esprit.persistance;
+package edu.esprit.domain;
 
 import java.io.Serializable;
 import java.lang.Integer;
@@ -7,22 +7,20 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: BirthRegistration
+ * Entity implementation class for Entity: CinRequest
  *
  */
 @Entity
 
-public class BirthRegistration implements Serializable {
+public class CinRequest implements Serializable {
 
 	   
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer idBirthRegistration;
-	private String marriageContract;
-	private String cin;
-	private String childName;
-	private Date birthDate;
-	private Date registrationDate;
+	private Integer idCinRequest;
+	private String birthExcerpt;
+	private String residenceCertificate;
+	private String photoId;
 	private String requestState;
 	private Date requestDate;
 	private Date responseDate;
@@ -52,74 +50,65 @@ public class BirthRegistration implements Serializable {
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
+
 	
 
-	public BirthRegistration() {
+	public CinRequest() {
 		super();
 	}   
-	public Integer getIdBirthRegistration() {
-		return this.idBirthRegistration;
+	public Integer getIdCinRequest() {
+		return this.idCinRequest;
 	}
 
-	public void setIdBirthRegistration(Integer idBirthRegistration) {
-		this.idBirthRegistration = idBirthRegistration;
+	public void setIdCinRequest(Integer idCinRequest) {
+		this.idCinRequest = idCinRequest;
 	}   
-	public String getMarriageContract() {
-		return this.marriageContract;
+	public String getBirthExcerpt() {
+		return this.birthExcerpt;
 	}
 
-	public void setMarriageContract(String marriageContract) {
-		this.marriageContract = marriageContract;
+	public void setBirthExcerpt(String birthExcerpt) {
+		this.birthExcerpt = birthExcerpt;
 	}   
-	public String getCin() {
-		return this.cin;
+	public String getResidenceCertificate() {
+		return this.residenceCertificate;
 	}
 
-	public void setCin(String cin) {
-		this.cin = cin;
+	public void setResidenceCertificate(String residenceCertificate) {
+		this.residenceCertificate = residenceCertificate;
 	}   
-	public String getChildName() {
-		return this.childName;
+	public String getPhotoId() {
+		return this.photoId;
 	}
 
-	public void setChildName(String childName) {
-		this.childName = childName;
+	public void setPhotoId(String photoId) {
+		this.photoId = photoId;
 	}   
-	public Date getBirthDate() {
-		return this.birthDate;
-	}
-
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}   
-	public Date getRegistrationDate() {
-		return this.registrationDate;
-	}
-
-	public void setRegistrationDate(Date registrationDate) {
-		this.registrationDate = registrationDate;
-	}
 	public String getRequestState() {
-		return requestState;
+		return this.requestState;
 	}
+
 	public void setRequestState(String requestState) {
 		this.requestState = requestState;
-	}
+	}   
 	public Date getRequestDate() {
-		return requestDate;
+		return this.requestDate;
 	}
+
 	public void setRequestDate(Date requestDate) {
 		this.requestDate = requestDate;
-	}
+	}   
 	public Date getResponseDate() {
-		return responseDate;
+		return this.responseDate;
 	}
+
 	public void setResponseDate(Date responseDate) {
 		this.responseDate = responseDate;
-	}
+	}   
 	public String getResponse() {
-		return response;
+		return this.response;
 	}
+
 	public void setResponse(String response) {
 		this.response = response;
 	}
