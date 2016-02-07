@@ -15,7 +15,7 @@ import edu.esprit.domain.Etablishment;
 @Stateless
 public class GestionEtablishment implements GestionEtablishmentRemote, GestionEtablishmentLocal {
 
-@PersistenceContext(unitName="egov-ejb")
+@PersistenceContext(unitName="E-Goverment")
 	EntityManager entityManager;
 
     /**
