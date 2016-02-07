@@ -1,4 +1,4 @@
-package edu.esprit.persistance;
+package edu.esprit.domain;
 
 import java.io.Serializable;
 import java.lang.Integer;
@@ -32,7 +32,8 @@ public class BirthRegistration implements Serializable {
 	@ManyToOne
 	private Service service  ;
 	@ManyToOne
-	private Employee employee; 
+	private Agent agent; 
+	
 	private static final long serialVersionUID = 1L;
 	public Client getClient() {
 		return client;
@@ -46,11 +47,11 @@ public class BirthRegistration implements Serializable {
 	public void setService(Service service) {
 		this.service = service;
 	}
-	public Employee getEmployee() {
-		return employee;
+	public Agent getAgent() {
+		return agent;
 	}
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
+	public void setAgent(Agent agent) {
+		this.agent = agent;
 	}
 	
 

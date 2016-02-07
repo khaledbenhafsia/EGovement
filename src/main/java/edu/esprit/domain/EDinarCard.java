@@ -1,4 +1,4 @@
-package edu.esprit.persistance;
+package edu.esprit.domain;
 
 import java.io.Serializable;
 import java.lang.Integer;
@@ -14,7 +14,7 @@ import javax.persistence.*;
  */
 @Entity
 
-public class EDianrCard implements Serializable {
+public class EDinarCard implements Serializable {
 
 	   
 	@Id
@@ -30,7 +30,7 @@ public class EDianrCard implements Serializable {
 	private List<EDinarServiceRequest> eDinarServiceRequestList  ; 
 	private static final long serialVersionUID = 1L;
 
-	public EDianrCard() {
+	public EDinarCard() {
 		super();
 	}   
 	public Integer getIdEDinarCard() {

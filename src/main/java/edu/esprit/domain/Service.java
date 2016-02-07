@@ -1,4 +1,4 @@
-package edu.esprit.persistance;
+package edu.esprit.domain;
 
 import java.io.Serializable;
 import java.lang.Integer;

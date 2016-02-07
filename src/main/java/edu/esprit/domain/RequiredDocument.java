@@ -1,39 +1,46 @@
-package edu.esprit.persistance;
+package edu.esprit.domain;
 
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
-import java.util.List;
-
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: Categorie
+ * Entity implementation class for Entity: RequiredDocument
  *
  */
 @Entity
 
-public class Categorie implements Serializable {
+public class RequiredDocument implements Serializable {
 
 	   
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer idCategorie;
+	private Integer idRequiredDocument;
 	private String name;
 	private String description;
-	@OneToMany(mappedBy="categorie")
-	private List<Service> listService ;
+	@ManyToOne
+	private Service service ; 
+	
 	private static final long serialVersionUID = 1L;
-
-	public Categorie() {
-		super();
-	}   
-	public Integer getIdCategorie() {
-		return this.idCategorie;
+	public Service getService() {
+		return service;
+	}
+	public void setService(Service service) {
+		this.service = service;
 	}
 
-	public void setIdCategorie(Integer idCategorie) {
-		this.idCategorie = idCategorie;
+	
+
+	public RequiredDocument() {
+		super();
+	}   
+	public Integer getIdRequiredDocument() {
+		return this.idRequiredDocument;
+	}
+
+	public void setIdRequiredDocument(Integer idRequiredDocument) {
+		this.idRequiredDocument = idRequiredDocument;
 	}   
 	public String getName() {
 		return this.name;

@@ -1,4 +1,4 @@
-package edu.esprit.persistance;
+package edu.esprit.domain;
 
 import java.io.Serializable;
 import java.lang.Integer;
@@ -25,7 +25,7 @@ public class Etablishment implements Serializable {
 	private String contact;
 	private Integer phonenumber;
 	@OneToMany(mappedBy="etablishment")
-	private List<Employee> listEmployees; 
+	private List<Agent> listAgents; 
 	@OneToMany(mappedBy="etablishment")
 	private List<Service> listService; 
 	private static final long serialVersionUID = 1L;

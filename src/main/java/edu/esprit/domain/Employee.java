@@ -1,4 +1,4 @@
-package edu.esprit.persistance;
+package edu.esprit.domain;
 
 import java.io.Serializable;
 import java.lang.Integer;
@@ -13,32 +13,22 @@ import javax.persistence.*;
  */
 @Entity
 
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="role")
+@DiscriminatorValue(value="emp")
 public class Employee implements Serializable {
-
-	   
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer idEmployee;
 	private String login;
 	private String password;
-	private String role;
-	@ManyToOne
-	private Etablishment etablishment ; 
-	private static final long serialVersionUID = 1L;
-
-	@OneToMany(mappedBy="employee")
-	private List<CinRequest> cinRequestList; 
-	@OneToMany(mappedBy="employee")
-	private List<BirthRegistration> birthRegistrationList; 
-	@OneToMany(mappedBy="employee")
-	private List<EDinarServiceRequest> eDinarServiceRequestList ; 
-	@OneToMany(mappedBy="employee")
-	private List<CareerObjectiveService> careerObjectiveServiceList ; 
+	
 	@OneToMany(mappedBy="employee")
 	private List<Claim> ClaimList ; 
-	@OneToMany(mappedBy="employee")
-	private List<RoadTaxService> RoadTaxServiceList  ; 
-
+	
+	private static final long serialVersionUID = 1L;
+	
 	public Employee() {
 		super();
 	}   
@@ -63,18 +53,5 @@ public class Employee implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}   
-	public String getRole() {
-		return this.role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-	public Etablishment getEtablishment() {
-		return etablishment;
-	}
-	public void setEtablishment(Etablishment etablishment) {
-		this.etablishment = etablishment;
-	}
-   
+	
 }

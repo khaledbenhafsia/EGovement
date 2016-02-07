@@ -1,4 +1,4 @@
-package edu.esprit.persistance;
+package edu.esprit.domain;
 
 
 import java.io.Serializable;
@@ -44,7 +44,7 @@ public class Client implements Serializable {
 	@OneToMany(mappedBy="client")
 	private List<RoadTaxService> RoadTaxServiceList  ; 
 	@OneToMany(mappedBy="client")
-	private List<EDianrCard>   eDianrCardList ; 
+	private List<EDinarCard>   eDianrCardList ; 
 	
 	
 	private static final long serialVersionUID = 1L;
