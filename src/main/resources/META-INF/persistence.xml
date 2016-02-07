@@ -8,7 +8,7 @@
 		<class>edu.esprit.domain.CinRequest</class>
 		<class>edu.esprit.domain.Claim</class>
 		<class>edu.esprit.domain.Client</class>
-		<class>edu.esprit.domain.EDianrCard</class>
+		<class>edu.esprit.domain.EDinarCard</class>
 		<class>edu.esprit.domain.EDinarServiceRequest</class>
 		<class>edu.esprit.domain.Employee</class>
 		<class>edu.esprit.domain.Etablishment</class>

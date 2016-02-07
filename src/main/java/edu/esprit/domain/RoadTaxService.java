@@ -29,7 +29,7 @@ public class RoadTaxService implements Serializable {
 	@ManyToOne
 	private Service service  ;
 	@ManyToOne
-	private Employee employee; 
+	private Agent agent; 
 	
 	public Client getClient() {
 		return client;
@@ -43,11 +43,11 @@ public class RoadTaxService implements Serializable {
 	public void setService(Service service) {
 		this.service = service;
 	}
-	public Employee getEmployee() {
-		return employee;
+	public Employee getAgent() {
+		return agent;
 	}
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
+	public void setAgent(Agent agent) {
+		this.agent = agent;
 	}
 	public String getRequestState() {
 		return requestState;

@@ -25,23 +25,24 @@ public class EDinarServiceRequest implements Serializable {
 	@ManyToOne
 	private University university;
 	@ManyToOne
-	private EDianrCard eDinarCard ; 
+	private EDinarCard eDinarCard ; 
 	@ManyToOne
 	private Client client; 
 	@ManyToOne
 	private TransportLine transportLine; 
 	@ManyToOne
-	private Employee employee ;
+	private Agent agent ;
+	
 	public University getUniversity() {
 		return university;
 	}
 	public void setUniversity(University university) {
 		this.university = university;
 	}
-	public EDianrCard geteDinarCard() {
+	public EDinarCard geteDinarCard() {
 		return eDinarCard;
 	}
-	public void seteDinarCard(EDianrCard eDinarCard) {
+	public void seteDinarCard(EDinarCard eDinarCard) {
 		this.eDinarCard = eDinarCard;
 	}
 	public Client getClient() {
@@ -56,11 +57,11 @@ public class EDinarServiceRequest implements Serializable {
 	public void setTransportLine(TransportLine transportLine) {
 		this.transportLine = transportLine;
 	}
-	public Employee getEmployee() {
-		return employee;
+	public Agent getAgent() {
+		return agent;
 	}
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
+	public void setAgent(Agent agent) {
+		this.agent = agent;
 	}
 	private static final long serialVersionUID = 1L;
 
