@@ -37,9 +37,9 @@
 				<configuration>
 					<filename>${project.artifactId}.jar</filename>
 					<hostname>localhost</hostname>
-					<username>chaima</username>
-					<password>chaima</password>
-					<port>19990</port>
+					<username>root</username>
+					<password>root</password>
+					<port>9990</port>
 				</configuration>
 				<executions>
 					<execution>
