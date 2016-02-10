@@ -22,14 +22,16 @@ public class Claim implements Serializable {
 	private String mail;
 	private String state;
 	@ManyToOne
-	private Client client ; 
+	private Citizen citizen ; 
 	@ManyToOne
 	private Employee employee; 
-	public Client getClient() {
-		return client;
+	
+	
+	public Citizen getCitizen() {
+		return citizen;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+	public void setCitizen(Citizen citizen) {
+		this.citizen = citizen;
 	}
 	public Employee getEmployee() {
 		return employee;

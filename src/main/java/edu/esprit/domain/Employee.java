@@ -25,7 +25,7 @@ public class Employee implements Serializable {
 	private String password;
 	
 	@OneToMany(mappedBy="employee")
-	private List<Claim> ClaimList ; 
+	private List<Claim> ClaimList ;  
 	
 	private static final long serialVersionUID = 1L;
 	
