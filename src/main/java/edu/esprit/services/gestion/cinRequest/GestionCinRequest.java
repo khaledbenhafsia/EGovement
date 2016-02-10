@@ -73,7 +73,7 @@ public class GestionCinRequest implements GestionCinRequestRemote, GestionCinReq
 			Query queryCinRequestByCitizen = entityManager.createQuery(
 				    "SELECT OBJECT(c) FROM CinRequest c WHERE c.citizen = :citizen"
 				);
-			queryCinRequestByCitizen.setParameter("citizen", citizen.getIdClient());
+			queryCinRequestByCitizen.setParameter("citizen", citizen);
 			cinRequest = (CinRequest) queryCinRequestByCitizen.getSingleResult();
 			return cinRequest; 
 		} catch (Exception e) {
@@ -87,7 +87,7 @@ public class GestionCinRequest implements GestionCinRequestRemote, GestionCinReq
 			Query queryCinRequestByCitizen = entityManager.createQuery(
 				    "SELECT OBJECT(c) FROM CinRequest c WHERE c.service = :service"
 				);
-			queryCinRequestByCitizen.setParameter("service", service.getIdService());
+			queryCinRequestByCitizen.setParameter("service", service);
 			cinRequest = (CinRequest) queryCinRequestByCitizen.getSingleResult();
 			return cinRequest; 
 		} catch (Exception e) {
@@ -101,7 +101,7 @@ public class GestionCinRequest implements GestionCinRequestRemote, GestionCinReq
 			Query queryCinRequestByAgent = entityManager.createQuery(
 				    "SELECT OBJECT(c) FROM CinRequest c WHERE c.agent = :agent"
 				);
-			queryCinRequestByAgent.setParameter("agent", agent.getIdEmployee());
+			queryCinRequestByAgent.setParameter("agent", agent);
 			cinRequest = (CinRequest) queryCinRequestByAgent.getSingleResult();
 			return cinRequest; 
 		} catch (Exception e) {

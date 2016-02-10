@@ -61,7 +61,7 @@ public class GestionRoadTaxService implements GestionRoadTaxServiceRemote, Gesti
 			Query queryroadTaxService = entityManager.createQuery(
 				    "SELECT OBJECT(c) FROM RoadTaxService c WHERE c.citizen = :citizen"
 				);
-			queryroadTaxService.setParameter("citizen", citizen.getIdClient());
+			queryroadTaxService.setParameter("citizen", citizen);
 			roadTaxService = (RoadTaxService) queryroadTaxService.getSingleResult();
 			return roadTaxService; 
 		} catch (Exception e) {
@@ -70,18 +70,14 @@ public class GestionRoadTaxService implements GestionRoadTaxServiceRemote, Gesti
 	}
 
 	@Override
-	public RoadTaxService findRoadTaxServiceByAgent(Agent agent) {
-		RoadTaxService roadTaxService = null;
+	public List<RoadTaxService> findRoadTaxServiceByAgent(Agent agent) {
 		try {
-			Query queryroadTaxService = entityManager.createQuery(
-				    "SELECT OBJECT(c) FROM RoadTaxService c WHERE c.agent = :agent"
-				);
-			queryroadTaxService.setParameter("agent", agent.getIdEmployee());
-			roadTaxService = (RoadTaxService) queryroadTaxService.getSingleResult();
-			return roadTaxService; 
+			Query query=entityManager.createQuery("select c from RoadTaxService c WHERE c.agent = :agent");
+			query.setParameter("agent", agent);
+			return query.getResultList();
 		} catch (Exception e) {
+			return null;
 		}
-		return roadTaxService;
 	}
 
 	@Override

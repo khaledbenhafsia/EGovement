@@ -1,8 +1,12 @@
 package edu.esprit.services.gestion.birthregistration;
 
+
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import edu.esprit.domain.BirthRegistration;
 
@@ -12,35 +16,51 @@ import edu.esprit.domain.BirthRegistration;
 @Stateless
 public class GestionBirthRegistration implements GestionBirthRegistrationRemote, GestionBirthRegistrationLocal {
 
-    /**
-     * Default constructor. 
-     */
+	@PersistenceContext(unitName="E-Goverment")EntityManager entityManager;
     public GestionBirthRegistration() {
         // TODO Auto-generated constructor stub
     }
 
 	@Override
 	public Boolean addBirthRegistration(BirthRegistration birthRegistration) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			entityManager.persist(birthRegistration);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	@Override
 	public Boolean deleteBirthRegistration(BirthRegistration birthRegistration) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			entityManager.remove(entityManager.merge(birthRegistration));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	@Override
 	public Boolean updateBirthRegistration(BirthRegistration birthRegistration) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			entityManager.merge(birthRegistration);
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			return false;
+		}
 	}
 
 	@Override
 	public List<BirthRegistration> findAllBirthRegistration() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			Query query=entityManager.createQuery("select c from BirthRegistration c");
+			return query.getResultList();
+		} catch (Exception e) {
+			return null;
+		}
 	}
+
 
 }

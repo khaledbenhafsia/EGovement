@@ -16,6 +16,6 @@ public interface GestionRoadTaxServiceRemote {
 	Boolean deleteRoadTaxService(RoadTaxService roadTaxService);
 	Boolean updateRoadTaxService(RoadTaxService roadTaxService);
 	RoadTaxService findRoadTaxServiceByCitizen(Citizen citizen);
-	RoadTaxService findRoadTaxServiceByAgent(Agent agent);
+	List<RoadTaxService> findRoadTaxServiceByAgent(Agent agent);
 	List<RoadTaxService> findAllRoadTaxService();
 }

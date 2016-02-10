@@ -14,8 +14,8 @@ public interface GestionClaimRemote {
 	Boolean deleteClaim(Claim claim);
 	Boolean updateClaim(Claim claim);
 	List<Claim> findClaimsBySubject(String subject);
-	List<Claim> findAllClaim();
 	List<Claim> findClaimsByState(String state);
 	List<Claim> findClaimsByCitizen(Citizen citizen);
 	List<Claim> findClaimsByAgent(Employee employee);
+	List<Claim> findAllClaim();
 }

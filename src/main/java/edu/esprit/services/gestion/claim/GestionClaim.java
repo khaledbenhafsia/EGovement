@@ -92,7 +92,7 @@ public class GestionClaim implements GestionClaimLocal , GestionClaimRemote {
 	public List<Claim> findClaimsByCitizen(Citizen citizen) {
 		Query query=entityManager.createQuery(""
 				+ "select e from Claim e WHERE e.citizen = :citizen");
-		query.setParameter("citizen", citizen.getIdClient());
+		query.setParameter("citizen", citizen);
 		try {
 			return query.getResultList();
 		} catch (Exception e) {
@@ -104,7 +104,7 @@ public class GestionClaim implements GestionClaimLocal , GestionClaimRemote {
 	public List<Claim> findClaimsByAgent(Employee employee) {
 		Query query=entityManager.createQuery(""
 				+ "select e from Claim e WHERE e.employee = :employee");
-		query.setParameter("employee", employee.getIdEmployee());
+		query.setParameter("employee", employee);
 		try {
 			return query.getResultList();
 		} catch (Exception e) {
