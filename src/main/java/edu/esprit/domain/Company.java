@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @DiscriminatorValue(value="company")
 public class Company extends Client implements Serializable  {
-
+	
 	private String name;
 	private static final long serialVersionUID = 1L;
 
